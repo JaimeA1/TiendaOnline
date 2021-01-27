@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "TiendaOnline"
+  "defaultProject": "TiendaOnline",
+  "cli": {
+    "analytics": "1693f72e-8087-4720-a741-833be4104fe9"
+  }
 }

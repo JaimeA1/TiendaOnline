@@ -1,0 +1,23 @@
+.card-img-top{
+  width: 100%;
+  height: 20vw;
+  object-fit: cover;
+}
+
+.productos a {
+  display: block;
+  overflow: auto;
+  margin-bottom: 1.5rem;
+}
+
+.productos img{
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  min-width: 100%;
+}
+
+.productos a:hover img{
+  -webkit-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  transform: scale(1.5);
+}

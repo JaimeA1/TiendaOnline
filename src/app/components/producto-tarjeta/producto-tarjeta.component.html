@@ -1,0 +1,11 @@
+<section class="productos">
+  <div class="card border-light mb-3 animated">
+    <a (click)="verProducto()"><img class="card-img-top" src="{{producto.imagen}}" alt="{{producto.nombre}}"></a>
+    <div class="card-body">
+      <h5 class="card-title">{{producto.nombre}}</h5>
+      <p class="card-text"><small>Consumición Preferente: {{producto.consumPref}} días</small></p>
+      <h5 class="card-title text-right">{{producto.precio}}€</h5>
+    </div>
+    <button class="btn btn-light btn-block" (click)="verProducto()">Ver más...</button>
+  </div>
+</section>

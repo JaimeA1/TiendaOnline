@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Producto, ProductosService} from "../../services/productos.service";
 import {Router} from "@angular/router";
-
 
 @Component({
   selector: 'app-productos',
@@ -12,15 +11,11 @@ export class ProductosComponent implements OnInit {
 
   productos!:Producto[];
 
-  constructor(private _productosService:ProductosService, private router:Router){
+  constructor(private _productosService:ProductosService){
 
   }
 
   ngOnInit(): void {
     this.productos = this._productosService.getProductos();
-  }
-
-  verProducto(id:number){
-    this.router.navigate(['/producto', id]);
   }
 }

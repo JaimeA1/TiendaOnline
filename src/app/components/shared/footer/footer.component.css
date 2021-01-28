@@ -1,7 +1,13 @@
 .card{
-  background-color: #F5CF51;
+  background-color: #282828;
+  color: white;
+}
+
+.card-body{
+  border-left: white 0.5px solid;
+  border-right: white 0.5px solid;
 }
 
 .card-text{
-  color: black;
+  color: white;
 }

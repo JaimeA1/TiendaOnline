@@ -10,6 +10,9 @@ import { FooterComponent } from './components/shared/footer/footer.component';
 import {ProductosService} from "./services/productos.service";
 import { ProductoComponent } from './components/producto/producto.component';
 import {CarouselModule} from "ng-uikit-pro-standard";
+import { FormsComponent } from './components/forms/forms.component';
+import { BuscadorComponent } from './components/buscador/buscador.component';
+import { ProductoTarjetaComponent } from './components/producto-tarjeta/producto-tarjeta.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import {CarouselModule} from "ng-uikit-pro-standard";
     HomeComponent,
     ProductosComponent,
     FooterComponent,
-    ProductoComponent
+    ProductoComponent,
+    FormsComponent,
+    BuscadorComponent,
+    ProductoTarjetaComponent
   ],
     imports: [
         BrowserModule,

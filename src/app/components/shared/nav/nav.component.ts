@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-nav',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) {}
 
   ngOnInit(): void {
   }
 
+  public buscarProducto(name:string){
+    this.router.navigate(["/buscar", name]) //Redirecciona al componente asignado en app.routes.ts
+  }
 }

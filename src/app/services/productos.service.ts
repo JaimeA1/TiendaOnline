@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 export interface Producto{
+  id?:number,
   nombre:string,
   imagen:string,
   precio:number,
@@ -110,6 +111,19 @@ export class ProductosService {
 
   getProducto(id: number): Producto {
     return this.productos[id];
+  }
+
+  public buscarProducto(name:string):Producto[] {
+    let productosEncontrados: Producto[] = [];
+    for (let i=0;i<this.productos.length;i++) {
+      let producto=this.productos[i];
+      let nombre = producto.nombre.toLowerCase();
+      if (nombre.indexOf(name) >= 0) {
+        producto.id = i;
+        productosEncontrados.push(producto)
+      }
+    }
+    return productosEncontrados;
   }
 
 }

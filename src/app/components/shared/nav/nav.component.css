@@ -1,5 +1,5 @@
 nav{
-  background-color: #F5CF51
+  background-color: #FFB454;
 }
 
 .navbar-brand{
@@ -10,5 +10,22 @@ nav{
   font-size: 1.2rem;
   padding-left: 2.5rem;
   padding-right: 2.5rem;
-  margin-left: 5rem;
+}
+
+.dropdown-menu{
+  background-color: #282828;
+  color: white;
+}
+
+.regis{
+  color: white;
+}
+
+.regis:hover{
+  background-color: white;
+  color: #282828;
+}
+
+.buscador{
+  margin-left: 20rem;
 }

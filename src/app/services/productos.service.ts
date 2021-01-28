@@ -115,6 +115,7 @@ export class ProductosService {
 
   public buscarProducto(name:string):Producto[] {
     let productosEncontrados: Producto[] = [];
+    name = name.toLowerCase()
     for (let i=0;i<this.productos.length;i++) {
       let producto=this.productos[i];
       let nombre = producto.nombre.toLowerCase();

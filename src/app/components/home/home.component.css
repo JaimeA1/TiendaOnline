@@ -3,9 +3,16 @@
 }
 
 .cuadro-texto{
-  background-color: #FFB454;
+  background-color: #af5574;
   border-radius: 15px;
+  border: 1px solid black;
 }
+
+.card{
+  background-color: #af5574;
+  border: 1px solid black;
+  border-radius: 15px;
+ }
 
 .h5{
   background-color: #282828;

@@ -13,6 +13,7 @@ import {CarouselModule} from "ng-uikit-pro-standard";
 import { FormsComponent } from './components/forms/forms.component';
 import { BuscadorComponent } from './components/buscador/buscador.component';
 import { ProductoTarjetaComponent } from './components/producto-tarjeta/producto-tarjeta.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ProductoTarjetaComponent } from './components/producto-tarjeta/producto
     ProductoComponent,
     FormsComponent,
     BuscadorComponent,
-    ProductoTarjetaComponent
+    ProductoTarjetaComponent,
+    PerfilComponent
   ],
     imports: [
         BrowserModule,

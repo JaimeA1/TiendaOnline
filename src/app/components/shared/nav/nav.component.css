@@ -10,12 +10,17 @@ nav{
   font-size: 1.2rem;
   padding-left: 2.5rem;
   padding-right: 2.5rem;
-  margin-left: 50px;
+  margin-left: 1.2rem;
 }
 
 .dropdown-menu{
   background-color: #282828;
   color: white;
+}
+
+.form-control:focus{
+  border-color: #282828;
+  box-shadow: 0 0 0 0.1rem rgb(40 40 40);
 }
 
 .regis{
@@ -28,6 +33,19 @@ nav{
 }
 
 .modal-content{
+  background-color: #282828;
+  color: white;
+}
+
+form.buscador{
+  float: right;
+}
+
+input.form-control.mr-2{
+  width: auto;
+}
+
+button.btn{
   background-color: #282828;
   color: white;
 }

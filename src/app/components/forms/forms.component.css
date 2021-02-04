@@ -1,4 +1,16 @@
-form{
-  margin: 0rem 8rem 0rem 8rem;
-  padding: 1.4rem;
+.form-row{
+  margin-bottom: 1rem;
+}
+
+.form-row:last-of-type{
+  margin-bottom: 0;
+}
+
+small{
+  color: #282828;
+}
+
+.form-control:focus{
+  border-color: #282828;
+  box-shadow: 0 0 0 0.1rem rgb(40 40 40);
 }

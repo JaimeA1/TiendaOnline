@@ -13,19 +13,42 @@
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" [routerLink]="['productos']">Productos</a>
       </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['perfil']">Perfil</a>
+      </li>
       <div class="dropdown show nav-item ">
         <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <img src="assets/img/usuario.png" class="img-fluid" alt="logo">
         </a>
         <div class="dropdown-menu" routerLinkActive="active">
-          <form class="px-4 py-3">
+          <form class="px-4 py-3" autocomplete="off" [formGroup]="forma" (ngSubmit)="guardar()">
             <div class="form-group">
-              <label for="exampleDropdownFormUser1">Usuario</label>
-              <input type="text" class="form-control" id="exampleDropdownFormUser1" placeholder="Usuario">
+              <label for="inputUserSesion">Usuario</label>
+              <input type="text"
+                     class="form-control"
+                     id="inputUserSesion"
+                     placeholder="Usuario"
+                     name="usuario"
+                     required="required"
+                     formControlName="usuario"
+                     [class.is-invalid]="!valido('usuario')">
+              <small class="form-text text-danger" *ngIf="!valido('usuario')">
+                Debe contener mínimo 5 caracteres.
+              </small>
             </div>
             <div class="form-group">
-              <label for="exampleDropdownFormPassword1">Contraseña</label>
-              <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Contraseña">
+              <label for="inputPasswordSesion">Contraseña</label>
+              <input type="password"
+                     class="form-control"
+                     id="inputPasswordSesion"
+                     placeholder="Contraseña"
+                     name="contrasena"
+                     required="required"
+                     formControlName="pass1"
+                     [class.is-invalid]="!valido('pass1')">
+              <small class="form-text text-danger" *ngIf="!valido('pass1')">
+                Debe contener mínimo 8 caracteres y máximo 20.
+              </small>
             </div>
             <div class="form-check">
               <input type="checkbox" class="form-check-input" id="dropdownCheck">
@@ -46,8 +69,10 @@
       </div>
     </ul>
     <form class="buscador form-inline" onsubmit="return false">
-      <input class="form-control mr-sm-2" type="search" placeholder="Buscar producto" aria-label="Search" (keyup.enter)="buscarProducto(buscarTexto.value)" #buscarTexto>
-      <button class="btn btn-light" type="button" (click)="buscarProducto(buscarTexto.value)">Buscar</button>
+      <input class="form-control mr-2" type="search" placeholder="Buscar producto" aria-label="Search" (keyup.enter)="buscarProducto(buscarTexto.value)" #buscarTexto>
+      <div class="input-group-append">
+        <button class="btn" type="button" (click)="buscarProducto(buscarTexto.value)">Buscar</button>
+      </div>
     </form>
   </div>
 </nav>
@@ -56,19 +81,29 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Cambio de contraseña</h5>
+        <h5 class="modal-title" id="ModalLabel">Cambio de contraseña</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true" style="color: #FFB454">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <div>
-          <label for="inputEmail4">Introduce tu correo</label>
-          <input type="email" class="form-control" id="inputEmail4" placeholder="ejemplo@ejemplo.com">
+        <div [formGroup]="forma">
+          <label for="inputEmailContra">Introduce tu correo</label>
+          <input type="email"
+                 class="form-control"
+                 id="inputEmailContra"
+                 placeholder="ejemplo@ejemplo.com"
+                 name="email"
+                 required="required"
+                 formControlName="email"
+                 [class.is-invalid]="!valido('email')">
+          <small class="form-text text-danger" *ngIf="!valido('email')">
+            Ejem: ejemplo@ejemplo.ejm
+          </small>
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-light" data-dismiss="modal">Cerrar</button>
         <button type="submit" class="btn btn-light">Enviar Correo</button>
       </div>
     </div>

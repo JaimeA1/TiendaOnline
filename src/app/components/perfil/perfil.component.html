@@ -1,1 +1,175 @@
-<p>perfil works!</p>
+<div class="perfil mt-5">
+  <div class="main-body">
+    <div class="row gutters-sm">
+      <div class="col-md-4 mx-auto mb-3">
+        <div class="card bg-light border-dark">
+          <div class="card-body">
+            <div class="d-flex flex-column align-items-center text-center">
+              <img src="assets/img/perfil.png" alt="Admin" class="rounded-circle" width="150">
+              <div class="mt-3">
+                <h4>JavilaR</h4>
+                <button class="btn btn-light mr-1" data-toggle="modal" data-target="#ModalImagen">Cambiar Imagen</button>
+                <button class="btn btn-light mr-1" name="modif" (click)="modificarDatos()">Modificar Datos</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="datos">
+      <div class="row gutters-sm">
+        <div class="col-lg-6 col-md-12 col-sm-12">
+          <div class="card border-dark mb-3">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Nombre</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  <input class="form-control col-form-label-sm" type="text" value="Jaime" [readOnly]="!modificar">
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Apellidos</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  <input class="form-control col-form-label-sm" type="text" value="Ávila Reyes" [readOnly]="!modificar">
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Email</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  <input class="form-control col-form-label-sm" type="text" value="javilar21@gmail.com" [readOnly]="!modificar">
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Teléfono</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  <input class="form-control col-form-label-sm" type="text" value="628875719" [readOnly]="!modificar">
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Fecha Nacimiento</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  <input class="form-control col-form-label-sm" type="text" value="05/09/1999" [readOnly]="!modificar">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-12 col-sm-12">
+          <div class="card border-dark mb-3">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Tarjeta de Crédito</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  <input class="form-control col-form-label-sm" type="text" value="xxxx xxxx xxxx xxxx" [readOnly]="!modificar">
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Dirección</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  <input class="form-control col-form-label-sm" type="text" value="Calle Ejemplo Nº1" [readOnly]="!modificar">
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Localidad</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  <input class="form-control col-form-label-sm" type="text" value="Pueblonuevo del Guadiana" [readOnly]="!modificar">
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Provincia</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  <input class="form-control col-form-label-sm" type="text" value="Badajoz" [readOnly]="!modificar">
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Codigo Postal</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  <input class="form-control col-form-label-sm" type="text" value="00000" [readOnly]="!modificar">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="botonguardar btn btn-dark btn-block mb-3" name="guardar" (click)="guardarDatos()">Guardar Datos</button>
+      </div>
+    </div>
+    <p class="text-center">
+      <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#multiCollapse1" aria-expanded="false" aria-controls="multiCollapse1">Pedidos Realizados</button>
+      <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#multiCollapse2" aria-expanded="false" aria-controls="multiCollapse2">Pedidos Cancelados</button>
+      <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#multiCollapse3" aria-expanded="false" aria-controls="multiCollapse3">Pedidos Devueltos</button>
+    </p>
+    <div class="row">
+      <div class="col-12 mt-2">
+        <div class="collapse multi-collapse" id="multiCollapse1">
+          <div class="card card-body">
+            <h1 class="display-4">Pedidos Realizados</h1>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 mt-4">
+        <div class="collapse multi-collapse" id="multiCollapse2">
+          <div class="card card-body">
+            <h1 class="display-4">Pedidos Cancelados</h1>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 mt-4">
+        <div class="collapse multi-collapse" id="multiCollapse3">
+          <div class="card card-body">
+            <h1 class="display-4">Pedidos Devueltos</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="ModalImagen" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Cambio de Imagen</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="file-loading">
+          <input id="input-b9" name="input-b9[]" class="btn btn-light" multiple type="file">
+        </div>
+        <div id="kartik-file-errors"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-light">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -14,6 +14,7 @@ import { FormsComponent } from './components/forms/forms.component';
 import { BuscadorComponent } from './components/buscador/buscador.component';
 import { ProductoTarjetaComponent } from './components/producto-tarjeta/producto-tarjeta.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -29,9 +30,11 @@ import { PerfilComponent } from './components/perfil/perfil.component';
     PerfilComponent
   ],
     imports: [
-        BrowserModule,
-        AppRoutingModule,
-        CarouselModule,
+      BrowserModule,
+      AppRoutingModule,
+      CarouselModule,
+      ReactiveFormsModule,
+      FormsModule
     ],
   providers: [ProductosService],
   exports: [

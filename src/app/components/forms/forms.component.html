@@ -1,65 +1,219 @@
-<h1 class="h4 text-center mt-5">Regístrate</h1>
+<h1 class="display-4 text-center mt-5">Regístrate</h1>
 <hr/>
-<form>
-  <fieldset>
-    <div class="form-row">
-      <div class="form-group col-md-4">
-        <label for="inputUser">Usuario</label>
-        <input type="text" class="form-control" id="inputUser" placeholder="Usuario">
-      </div>
-      <div class="form-group col-md-4">
-        <label for="inputPassword">Contraseña</label>
-        <input type="password" class="form-control" id="inputPassword" placeholder="Contraseña">
-      </div>
-      <div class="form-group col-md-4">
-        <label for="inputPassword2">Repetir Contraseña</label>
-        <input type="password" class="form-control" id="inputPassword2" placeholder="Repetir Contraseña">
-      </div>
-    </div>
-    <div class="form-row">
-      <div class="form-group col-md-4">
-        <label for="inputEmail4">Correo</label>
-        <input type="email" class="form-control" id="inputEmail4" placeholder="ejemplo@ejemplo.com">
-      </div>
-      <div class="form-group col-md-4">
-        <label for="inputNombre">Nombre</label>
-        <input type="email" class="form-control" id="inputNombre" placeholder="Nombre">
-      </div>
-      <div class="form-group col-md-4">
-        <label for="inputNombre2">Apellidos</label>
-        <input type="password" class="form-control" id="inputNombre2" placeholder="Apellidos">
+<form class="mx-5 px-5 py-4" autocomplete="on" [formGroup]="forma" (ngSubmit)="guardar()">
+  <div class="form-row">
+    <div class="form-group col-md-4 col-sm-12">
+      <label for="inputUser">Usuario</label>
+      <input type="text"
+             class="form-control"
+             id="inputUser"
+             placeholder="Usuario"
+             name="usuario"
+             required="required"
+             formControlName="usuario"
+             [class.is-invalid]="!valido('usuario')">
+      <div class="invalid-tooltip" *ngIf="!valido('usuario')">
+        Debe contener al menos 5 caracteres.
       </div>
     </div>
-    <div class="form-row">
-      <div class="form-group col-md-4">
-        <label for="inputDirecc">Direccion</label>
-        <input type="text" class="form-control" id="inputDirecc" placeholder="Dirección Completa">
-      </div>
-      <div class="form-group col-md-4">
-        <label for="inputCiudad">Localidad</label>
-        <input type="text" class="form-control" id="inputCiudad" placeholder="Localidad">
-      </div>
-      <div class="form-group col-md-2">
-        <label for="inputProv">Provincia</label>
-        <input type="text" class="form-control" id="inputProv" placeholder="Provincia">
-      </div>
-      <div class="form-group col-md-2">
-        <label for="inputCPostal">Código Postal</label>
-        <input type="text" class="form-control" id="inputCPostal" placeholder="00000">
+    <div class="form-group col-md-4 col-sm-12">
+      <label for="inputPassword1">Contraseña</label>
+      <input type="password"
+             class="form-control"
+             id="inputPassword1"
+             placeholder="Contraseña"
+             name="contra"
+             required="required"
+             formControlName="pass1"
+             [class.is-invalid]="!valido('pass1')">
+      <div class="invalid-tooltip" *ngIf="!valido('pass1')">
+        Debe contener entre 8 y 20 caracteres
       </div>
     </div>
-    <div class="form-row">
-      <div class="form-group">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="gridCheck">
-          <label class="form-check-label" for="gridCheck">
-            Recuérdame
-          </label>
-        </div>
+    <div class="form-group col-md-4 col-sm-12">
+      <label for="inputPassword2">Repetir Contraseña</label>
+      <input type="password"
+             class="form-control"
+             id="inputPassword2"
+             placeholder="Repetir Contraseña"
+             name="contra2"
+             required="required"
+             formControlName="pass2"
+             [class.is-invalid]="!pass2Valido || !valido('pass2')">
+      <div class="invalid-tooltip" *ngIf="!valido('pass2')">
+        Las contraseñas no coinciden.
       </div>
     </div>
-    <button type="submit" class="btn btn-light">Registrarse</button>
-  </fieldset>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-4 col-sm-12">
+      <label for="inputEmail">Correo</label>
+      <input type="text"
+             class="form-control"
+             id="inputEmail"
+             placeholder="ejemplo@ejemplo.com"
+             name="email"
+             required="required"
+             formControlName="email"
+             [class.is-invalid]="!valido('email')">
+      <div class="invalid-tooltip" *ngIf="!valido('email')">
+        Ejem: ejemplo@ejemplo.ejm
+      </div>
+    </div>
+    <div class="form-group col-md-4 col-sm-12">
+      <label for="inputNombre">Nombre</label>
+      <input type="email"
+             class="form-control"
+             id="inputNombre"
+             placeholder="Nombre"
+             name="nombre"
+             required="required"
+             formControlName="nombre"
+             [class.is-invalid]="!valido('nombre')">
+      <div class="invalid-tooltip" *ngIf="!valido('nombre')">
+        Debe contener mínimo 3 caracteres.
+      </div>
+    </div>
+    <div class="form-group col-md-4 col-sm-12">
+      <label for="inputApellidos">Apellidos</label>
+      <input type="password"
+             class="form-control"
+             id="inputApellidos"
+             placeholder="Apellidos"
+             name="apellidos"
+             required="required"
+             formControlName="apellido"
+             [class.is-invalid]="!valido('apellido')">
+      <div class="invalid-tooltip" *ngIf="!valido('apellido')">
+        Debe contener mínimo 3 caracteres.
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-4 col-sm-12">
+      <label for="inputTelef">Telefono</label>
+      <input type="text"
+             class="form-control"
+             id="inputTelef"
+             placeholder="000000000"
+             name="telef"
+             required="required"
+             formControlName="telef"
+             [class.is-invalid]="!valido('telef')">
+      <div class="invalid-tooltip" *ngIf="!valido('telef')">
+        Debe contener 9 dígitos.
+      </div>
+    </div>
+    <div class="form-group col-md-4 col-sm-12">
+      <label for="inputDate">Fecha Nacimiento</label>
+      <input type="date"
+             class="form-control"
+             id="inputDate"
+             placeholder="dd/mm/aaaa"
+             name="fecha"
+             required="required"
+             formControlName="fechanac"
+             [class.is-invalid]="!valido('fechanac')">
+      <div class="invalid-tooltip" *ngIf="!valido('fechanac')">
+        Debe estar relleno.
+      </div>
+    </div>
+    <div class="form-group col-md-4 col-sm-12">
+      <label for="inputCard">Tarjeta de Credito</label>
+      <input type="text"
+             class="form-control"
+             id="inputCard"
+             placeholder="xxxx xxxx xxxx xxxx"
+             name="tarjeta"
+             required="required"
+             formControlName="tarjeta"
+             [class.is-invalid]="!valido('tarjeta')">
+      <div class="invalid-tooltip" *ngIf="!valido('tarjeta')">
+        Ejem: xxxx xxxx xxxx xxxx
+      </div>
+    </div>
+  </div>
+  <div class="form-row" formGroupName="direccion">
+    <div class="form-group col-md-4 col-sm-12">
+      <label for="inputDirecc">Direccion</label>
+      <input type="text"
+             class="form-control"
+             id="inputDirecc"
+             placeholder="Dirección Completa"
+             name="direccion"
+             required="required"
+             formControlName="direcc"
+             [class.is-invalid]="!valido('direccion.direcc')">
+      <div class="invalid-tooltip" *ngIf="!valido('direccion.direcc')">
+        Debe contener mínimo 3 caracteres.
+      </div>
+    </div>
+    <div class="form-group col-md-4 col-sm-12">
+      <label for="inputCiudad">Localidad</label>
+      <input type="text"
+             class="form-control"
+             id="inputCiudad"
+             placeholder="Localidad"
+             name="local"
+             required="required"
+             formControlName="local"
+             [class.is-invalid]="!valido('direccion.local')">
+      <div class="invalid-tooltip" *ngIf="!valido('direccion.local')">
+        Debe contener mínimo 3 caracteres.
+      </div>
+    </div>
+    <div class="form-group col-md-2 col-sm-12">
+      <label for="inputProv">Provincia</label>
+      <input type="text"
+             class="form-control"
+             id="inputProv"
+             placeholder="Provincia"
+             name="prov"
+             required="required"
+             formControlName="prov"
+             [class.is-invalid]="!valido('direccion.prov')">
+      <div class="invalid-tooltip" *ngIf="!valido('direccion.prov')">
+        Debe contener mínimo 3 caracteres.
+      </div>
+    </div>
+    <div class="form-group col-md-2 col-sm-12">
+      <label for="inputCPostal">Código Postal</label>
+      <input type="text"
+             class="form-control"
+             id="inputCPostal"
+             placeholder="00000"
+             name="cpostal"
+             required="required"
+             formControlName="cpost"
+             [class.is-invalid]="!valido('direccion.cpost')">
+      <div class="invalid-tooltip" *ngIf="!valido('direccion.cpost')">
+        Debe contener máximo 5 caracteres.
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group">
+      <div class="form-check">
+        <input class="form-check-input"
+               name="condiciones"
+               type="checkbox"
+               id="gridTerminos"
+               (click)="condiciones()">
+        <label class="form-check-label" for="gridTerminos">
+          Acepto los Términos y Condiciones.
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input"
+               type="checkbox"
+               id="gridRecordar">
+        <label class="form-check-label" for="gridRecordar">
+          Recuérdame.
+        </label>
+      </div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-light" [disabled]="!noCondiciones">Registrarse</button>
 </form>
 
 
